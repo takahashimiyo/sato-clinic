@@ -1,0 +1,1058 @@
+:root {
+  --green: #15965f;
+  --dark: #253933;
+  --mint: #e9f4f2;
+  --pale: #F4F9FA;
+  --line: #d8e6e2;
+  --text: #2b3330;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0;
+  padding-top: 86px;
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--text);
+  background: #F4F9FA;
+  font-size: 14px;
+  line-height: 1.85
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+img {
+  display: block;
+  max-width: 100%
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 86px;
+  background: #fff;
+  border-bottom: 1px solid #e8eeec;
+  box-shadow: 0 1px 0 rgba(21, 150, 95, .06)
+}
+
+.header-inner {
+  width: 1180px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 34px
+}
+
+.brand {
+  width: 205px;
+  flex: none
+}
+
+.brand img {
+  width: 100%;
+  height: auto
+}
+
+.header-right {
+  margin-left: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px
+}
+
+.global-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap
+}
+
+.global-nav a:hover {
+  color: var(--green)
+}
+
+.header-contact {
+  text-align: right;
+  line-height: 1.1;
+  color: #55716a;
+  font-size: 10px;
+  white-space: nowrap
+}
+
+.header-contact span {
+  margin-right: 12px;
+  font-size: 12px;
+}
+
+.header-contact strong {
+  display: inline;
+  color: var(--green);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  vertical-align: -1px
+}
+
+.hero {
+  height: 462px;
+  position: relative;
+  overflow: hidden;
+  background: #ccc
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+  opacity: 0;
+  transition: opacity 1.6s ease-in-out
+}
+
+.hero-slide.is-active {
+  opacity: 1
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 40, 55, .26), rgba(0, 0, 0, 0) 55%)
+}
+
+.hero-copy {
+  position: absolute;
+  left: calc(50% - 590px);
+  top: 98px;
+  color: #fff;
+  font-size: 37px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .23)
+}
+
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 2
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .55);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .18);
+  cursor: pointer;
+  transition: background-color .25s ease, transform .25s ease
+}
+
+.hero-dot.is-active {
+  background: #fff;
+  transform: scale(1.15)
+}
+
+.page-wrap {
+  width: 1060px;
+  margin: 50px auto 0;
+  position: relative;
+  z-index: 2
+}
+
+.schedule-card {
+  background: transparent;
+  border-radius: 18px;
+  padding: 0 0 28px;
+  box-shadow: none
+}
+
+.schedule-card table {
+  background: #fff;
+  border: 2px solid #d9e1df;
+  border-radius: 17px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0
+}
+
+.schedule-card tbody tr:last-child th:first-child {
+  border-radius: 0 0 0 17px
+}
+
+.schedule-card tbody tr:last-child td:last-child {
+  border-radius: 0 0 17px 0
+}
+
+.schedule-card tbody tr:last-child th,
+.schedule-card tbody tr:last-child td {
+  border-bottom: 0
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse
+}
+
+.schedule-card table,
+.access-schedule {
+  table-layout: fixed
+}
+
+.schedule-card th,
+.schedule-card td {
+  text-align: center;
+  border-right: 2px solid #d9e1df;
+  border-bottom: 2px solid #d9e1df;
+  height: 58px;
+  font-size: 18px
+}
+
+.access-schedule th,
+.access-schedule td {
+  text-align: center;
+  border-right: 2px solid #d9e1df;
+  border-bottom: 2px solid #d9e1df;
+  height: 58px;
+  font-size: 18px
+}
+
+.schedule-card thead th,
+.access-schedule thead th {
+  background: var(--green);
+  color: #fff;
+  border-color: rgba(255, 255, 255, .35);
+  font-weight: 500
+}
+
+.schedule-card thead th:first-child,
+.access-schedule thead th:first-child {
+  border-radius: 17px 0 0 0;
+  width: 230px
+}
+
+.schedule-card thead th:last-child,
+.access-schedule thead th:last-child {
+  border-radius: 0 17px 0 0
+}
+
+.schedule-card tbody th,
+.access-schedule tbody th {
+  background: #fff;
+  font-weight: 500
+}
+
+.schedule-note {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 20px 30px 0;
+  color: #56615e
+}
+
+.section-action {
+  text-align: right;
+  margin-top: 22px
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 190px;
+  height: 50px;
+  padding: 0 28px;
+  border-radius: 30px;
+  background: #3d715a;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: .03em
+}
+
+.pill span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1em;
+  font-size: 22px;
+  line-height: 1;
+  transform: translateY(-2px)
+}
+
+.section {
+  margin-top: 80px
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  width: 260px;
+  height: 78px;
+  margin: 0;
+  background: #F4F9FA;
+  position: relative;
+  z-index: 2;
+  padding: 0 26px;
+  color: #111;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.2;
+  border: 2px solid var(--green);
+  border-bottom: 0;
+  border-radius: 28px 28px 0 0
+}
+
+.section-title::before,
+.section-title::after {
+  content: none
+}
+
+.title-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 16px;
+  flex: none
+}
+
+.title-line {
+  height: 2px;
+  background: var(--green);
+  margin-top: -2px;
+  margin-left: 260px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1
+}
+
+.intro {
+  margin: -8px 0 28px;
+  font-size: 13px
+}
+
+.news-body {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 50px;
+  align-items: start
+}
+
+.news-body img {
+  width: 310px;
+  height: 195px;
+  object-fit: cover;
+  object-position: center center
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column
+}
+
+.news-list a {
+  display: flex;
+  gap: 28px;
+  padding: 11px 0;
+  border-bottom: 1px solid #e0e8e5;
+  font-size: 13px
+}
+
+.news-list time {
+  color: #71827c;
+  font-size: 11px;
+  min-width: 86px
+}
+
+.doctor-body {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 46px
+}
+
+.doctor-body img {
+  width: 310px;
+  height: 430px;
+  object-fit: cover;
+  object-position: calc(50% - 50px) center
+}
+
+.doctor-text p {
+  margin: 0 0 16px
+}
+
+.doctor-sign {
+  text-align: right;
+  font-weight: 500;
+  padding-top: 4px
+}
+
+.medical-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px
+}
+
+.medical-card {
+  background: #dceff0;
+  border-radius: 25px;
+  padding: 30px 31px;
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 20px;
+  min-height: 180px
+}
+
+.medical-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.5
+}
+
+.medical-card .single-line-title {
+  white-space: nowrap;
+}
+
+.medical-card p {
+  font-size: 12px;
+  line-height: 1.75;
+  margin: 0
+}
+
+.line-icon {
+  font-size: 50px;
+  line-height: 1;
+  color: var(--green);
+  font-weight: 400
+}
+
+.about-visual {
+  height: 390px;
+  position: relative;
+  overflow: hidden
+}
+
+.about-visual>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.about-panel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, .80);
+  border-radius: 18px;
+  padding: 36px 44px 34px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .07)
+}
+
+.about-panel p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2;
+  margin: 0 0 20px;
+  text-align: center
+}
+
+.about-panel .pill {
+  display: flex;
+  width: max-content;
+  margin: 4px auto 0
+}
+
+.director-card {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 46px;
+  align-items: center;
+  margin: 24px 0 42px;
+  padding: 0 12px
+}
+
+.director-card img {
+  width: 245px;
+  height: 245px;
+  border-radius: 50%;
+  object-fit: cover
+}
+
+.director-card h3 {
+  font-size: 18px;
+  margin: 0 0 12px
+}
+
+.green-text {
+  color: var(--green);
+  font-weight: 700
+}
+
+.director-card p {
+  margin: 5px 0
+}
+
+.director-card dl,
+.staff-grid dl {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  gap: 4px 0;
+  margin: 14px 0 0;
+  font-size: 11px
+}
+
+.director-card dt,
+.staff-grid dt {
+  background: #e5efec;
+  padding: 3px 8px
+}
+
+.director-card dd,
+.staff-grid dd {
+  margin: 0;
+  padding: 3px 10px
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px
+}
+
+.staff-grid article {
+  text-align: left
+}
+
+.staff-grid img {
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 18px
+}
+
+.staff-grid h3 {
+  text-align: center;
+  font-size: 15px;
+  margin: 0 0 12px
+}
+
+.staff-grid p {
+  font-size: 11px;
+  margin: 0;
+  color: #41524d
+}
+
+.access-main {
+  display: grid;
+  grid-template-columns: 470px 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 32px
+}
+
+.access-main img {
+  width: 470px;
+  height: 325px;
+  object-fit: cover
+}
+
+.access-text {
+  font-size: 15px
+}
+
+.access-text p {
+  margin: 0 0 16px
+}
+
+.access-schedule {
+  background: #fff;
+  border: 2px solid #d9e1df;
+  border-radius: 17px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0
+}
+
+.access-schedule th,
+.access-schedule td {
+  height: 54px
+}
+
+.access-schedule tr th:last-child,
+.access-schedule tr td:last-child {
+  border-right: 0
+}
+
+.access-schedule tbody tr:last-child th,
+.access-schedule tbody tr:last-child td {
+  border-bottom: 0
+}
+
+.departments {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 700px;
+  margin: 32px auto 0
+}
+
+.departments>span {
+  flex: none;
+  background: #e2f0ef;
+  border-radius: 28px;
+  padding: 15px 24px;
+  font-weight: 700;
+  font-size: 16px
+}
+
+.departments div {
+  font-size: 16px;
+  line-height: 1.9
+}
+
+.departments p {
+  margin: 0
+}
+
+.departments-note {
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 9px;
+  line-height: 1.8;
+  color: #56615e
+}
+
+.contact-banner {
+  height: 180px;
+  margin: 76px 0 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center
+}
+
+.contact-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.12)
+}
+
+.contact-banner:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, .55)
+}
+
+.contact-banner div {
+  position: relative;
+  z-index: 1
+}
+
+.contact-banner h2 {
+  margin: 0 0 10px;
+  font-size: 24px
+}
+
+.contact-banner p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: .02em;
+  font-weight: 500
+}
+
+footer {
+  height: 45px;
+  background: #0f9658;
+  color: #fff
+}
+
+.footer-inner {
+  width: 1060px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  opacity: .96
+}
+
+@media(max-width:1100px) {
+  body {
+    min-width: 1100px
+  }
+
+  .header-inner {
+    width: 1060px
+  }
+
+  .global-nav {
+    gap: 15px
+  }
+
+  .hero-copy {
+    left: 20px
+  }
+}
+
+
+.medical-card .line-icon {
+  font-size: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 74px;
+  height: 112px
+}
+
+.medical-card .line-icon img {
+  display: block;
+  width: 74px;
+  height: 96px;
+  object-fit: contain;
+  object-position: center top
+}
+
+.doctor-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 38px;
+  align-items: start
+}
+
+.doctor-layout>img {
+  width: 300px;
+  height: 380px;
+  object-fit: cover;
+  object-position: 82% center;
+  border-radius: 0
+}
+
+.doctor-copy p {
+  margin: 0 0 18px;
+  line-height: 2
+}
+
+.doctor-sign {
+  text-align: right;
+  font-weight: 600;
+  margin-top: 24px
+}
+
+/* v8 adjustments */
+.about-visual,
+.about-image,
+.about-photo {
+  position: relative;
+}
+
+.about-visual .about-copy,
+.about-image .about-copy,
+.about-photo .about-copy,
+.about-visual .about-text,
+.about-image .about-text,
+.about-photo .about-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, .8) !important;
+  border-radius: 18px;
+}
+
+
+
+.doctor-layout>img {
+  object-position: 82% center !important;
+}
+
+
+
+/* v14: doctor portrait framing reset. Keep the doctor fully visible inside the portrait crop. */
+.doctor-layout>img {
+  object-fit: cover !important;
+  object-position: 82% center !important;
+}
+
+
+
+/* v20 staff section: reference screenshot alignment and copy */
+.staff-intro {
+  margin: -8px 0 34px;
+  font-size: 13px;
+  line-height: 2;
+  color: #27332f
+}
+
+.director-card {
+  width: 840px;
+  margin: 30px auto 58px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 30px;
+  align-items: center
+}
+
+.director-portrait {
+  width: 245px;
+  height: 245px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden
+}
+
+.director-card .director-portrait img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: 68% 34%;
+  transform: scale(1.10);
+  transform-origin: 68% 34%
+}
+
+.director-card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 14px;
+  color: #111
+}
+
+.director-card .green-text {
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0 0 14px;
+  color: var(--green);
+  font-weight: 700
+}
+
+.director-card dl {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 8px 0;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.7
+}
+
+.director-card dt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5efec;
+  border-radius: 6px;
+  padding: 5px 8px;
+  color: #34433e
+}
+
+.director-card dd {
+  margin: 0;
+  padding: 5px 10px;
+  color: #34433e
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 54px;
+  align-items: start
+}
+
+.staff-grid article {
+  text-align: left
+}
+
+.staff-grid img {
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  margin: 0 auto 22px
+}
+
+.staff-grid article:nth-child(1) img {
+  object-position: 74% 24%
+}
+
+.staff-grid article:nth-child(2) img {
+  object-position: 50% 18%
+}
+
+.staff-grid article:nth-child(3) img {
+  object-position: 78% 0%
+}
+
+.staff-grid h3 {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0 15px;
+  color: #111
+}
+
+.staff-grid p.green-text {
+  width: 20em;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 12px calc((100% - 20em) / 2);
+  color: var(--green);
+  font-weight: 700;
+  min-height: auto
+}
+
+.staff-grid dl {
+  width: calc(66px + 8px + 22em);
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 66px 22em;
+  gap: 8px 0;
+  margin: 0 0 0 calc((100% - 28em) / 2);
+  font-size: 10px;
+  line-height: 1.65
+}
+
+.staff-grid dt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5efec;
+  border-radius: 6px;
+  padding: 5px 6px;
+  color: #34433e
+}
+
+.staff-grid dd {
+  margin: 0;
+  padding: 5px 8px;
+  color: #34433e;
+  max-width: 22em;
+  word-break: break-word
+}
+
+
+
+/* v39: access section refinements */
+.access-departments {
+  width: 760px;
+  max-width: 100%;
+  margin: 34px auto 0;
+  text-align: center;
+}
+
+.access-departments h3 {
+  font-size: 22px;
+  margin: 0 0 18px;
+}
+
+.access-departments ul {
+  display: inline-block;
+  margin: 0 auto;
+  padding-left: 1.4em;
+  text-align: left;
+  font-size: 16px;
+  line-height: 2;
+}
+
+
+
+/* v40: align departments block with the access schedule table */
+.departments {
+  width: 700px;
+  max-width: 100%;
+  margin: 50px auto 0;
+  border-top: 2px solid #0F924A;
+  border-bottom: 2px solid #0F924A;
+  padding: 20px 0;
+  justify-content: center;
+  gap: 30px;
+}
+
+.departments>span {
+  padding: 17px 26px;
+  font-size: 18px;
+}
+
+.departments div {
+  font-size: 18px;
+}
+
+.departments-note {
+  width: 700px;
+  max-width: 100%;
+  margin: 14px auto 0;
+  text-align: center;
+}
+
+.access .section-action {
+  margin-top: 50px;
+}
+
+
+
+/* v41: departments typography + inner shadow for all page-transition buttons */
+.departments h3 {
+  font-size: calc(1em + 2px);
+}
+
+.departments,
+.departments ul,
+.departments li,
+.departments-note {
+  font-size: calc(1em + 2px);
+}
+
+/* ページ遷移ボタンに、デザイン画像に近い下部インナーシャドウを追加 */
+.pill {
+  box-shadow:
+    inset 0 -4px 6px rgba(0, 0, 0, .14);
+}
