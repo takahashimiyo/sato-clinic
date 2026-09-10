@@ -66,6 +66,11 @@ img {
   height: auto
 }
 
+.menu-toggle-input,
+.menu-toggle {
+  display: none;
+}
+
 .header-right {
   margin-left: auto;
   height: 100%;
@@ -1097,4 +1102,477 @@ footer {
 .pill {
   box-shadow:
     inset 0 -4px 6px rgba(0, 0, 0, .14);
+}
+
+/* Smartphone layout */
+@media (max-width: 767px) {
+  body {
+    min-width: 0;
+    padding-top: 62px;
+    overflow-x: hidden;
+  }
+
+  html,
+  body {
+    width: 100%;
+  }
+
+  .site-header {
+    height: 62px;
+  }
+
+  .header-inner {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .brand {
+    width: 132px;
+  }
+
+  .menu-toggle-input {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 2px 0 0;
+    cursor: pointer;
+  }
+
+  .menu-toggle > span:not(.menu-label) {
+    display: block;
+    width: 28px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--green);
+  }
+
+  .menu-toggle .menu-label {
+    margin-top: 0;
+    color: var(--green);
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .header-right {
+    min-width: 0;
+    gap: 4px;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .global-nav {
+    position: fixed;
+    top: 62px;
+    right: 16px;
+    z-index: 1001;
+    display: none;
+    width: min(250px, calc(100vw - 32px));
+    max-width: none;
+    padding: 8px 18px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow: visible;
+    background: #fff;
+    border: 1px solid #dce9e4;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 5px 16px rgba(37, 57, 51, .14);
+    font-size: 16px;
+  }
+
+  .global-nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid #edf2f0;
+  }
+
+  .global-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  #menu-toggle:checked ~ .header-right .global-nav {
+    display: flex;
+  }
+
+  .header-contact strong {
+    font-size: 16px;
+  }
+
+  .hero {
+    height: 250px;
+  }
+
+  .hero-copy {
+    left: 20px;
+    font-size: 28px;
+    letter-spacing: .05em;
+  }
+
+  .hero::before {
+    width: 88%;
+  }
+
+  .page-wrap {
+    width: calc(100% - 80px);
+    margin-top: 22px;
+  }
+
+  .schedule-card table,
+  .access-schedule {
+    font-size: 16px;
+  }
+
+  .schedule-card th,
+  .schedule-card td,
+  .access-schedule th,
+  .access-schedule td {
+    height: 40px;
+    font-size: 14px;
+    padding: 1px;
+  }
+
+  .schedule-card thead th:first-child,
+  .access-schedule thead th:first-child {
+    width: 28%;
+  }
+
+  .schedule-card thead th:first-child,
+  .access-schedule thead th:first-child {
+    width: auto;
+  }
+
+  .schedule-note,
+  .departments-note {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .section {
+    margin-top: 48px;
+  }
+
+  .section-title,
+  .section-title--compact {
+    width: 240px;
+    max-width: 100%;
+    height: 58px;
+    padding: 0 16px;
+    border-radius: 20px 20px 0 0;
+    font-size: 20px;
+  }
+
+  .section-title--compact {
+    white-space: nowrap;
+  }
+
+  .section-title > span,
+  .section-title--compact > span {
+    top: -2px;
+    left: 0;
+  }
+
+  .title-icon,
+  .about .title-icon,
+  .staff .title-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    transform: none;
+  }
+
+  .title-line {
+    margin-left: 240px;
+    margin-bottom: 22px;
+  }
+
+  .intro {
+    margin: 0 0 22px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .news-body,
+  .doctor-layout,
+  .access-main {
+    display: block;
+  }
+
+  .news-body img {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 18px;
+  }
+
+  .news-body > img {
+    display: none;
+  }
+
+  .news-list a {
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .news-list time {
+    min-width: 78px;
+    font-size: 13px;
+  }
+
+  .doctor-layout > img {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 22px;
+    object-position: 82% center !important;
+  }
+
+  .doctor-copy p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .medical-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .medical-card {
+    grid-template-columns: 58px 1fr;
+    gap: 12px;
+    min-height: 0;
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .medical-card h3 {
+    font-size: 18px;
+  }
+
+  .medical-card p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .medical-card .line-icon,
+  .medical-card .line-icon img {
+    width: 58px;
+    height: 78px;
+  }
+
+  .about-visual {
+    height: auto;
+    overflow: visible;
+  }
+
+  .about-visual > img {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .about-panel {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: calc(100% - 24px);
+    margin: -48px auto 0;
+    padding: 22px 16px 20px;
+  }
+
+  .about-panel p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .director-card {
+    width: 100%;
+    margin: 22px 0 42px;
+    display: block;
+    text-align: center;
+  }
+
+  .director-portrait {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 16px;
+  }
+
+  .director-card h3 {
+    font-size: 18px;
+  }
+
+  .director-card .green-text {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .director-card dl {
+    text-align: left;
+    grid-template-columns: 66px 1fr;
+    font-size: 14px;
+  }
+
+  .staff-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .staff-grid article {
+    padding-top: 0;
+  }
+
+  .staff-grid article + article {
+    padding-top: 34px;
+    border-top: 1px solid rgba(37, 57, 51, .16);
+  }
+
+  .staff-grid article + article::before {
+    display: none;
+  }
+
+  .staff-grid img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .staff-grid h3 {
+    font-size: 16px;
+  }
+
+  .staff-grid p.green-text {
+    width: 20em;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+  }
+
+  .staff-grid dl {
+    width: calc(66px + 8px + 15em);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 66px 15em;
+    font-size: 14px;
+  }
+
+  .staff-grid dd.staff-career,
+  .staff-grid dt.staff-specialty-label + dd {
+    width: calc(15em + 16px);
+  }
+
+  .access-main img {
+    width: 100%;
+    height: 230px;
+    margin-bottom: 18px;
+  }
+
+  .access-text {
+    font-size: 14px;
+  }
+
+  .departments {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 16px 0;
+    text-align: center;
+  }
+
+  .departments > span {
+    display: inline-flex;
+    margin-bottom: 14px;
+    padding: 12px 20px;
+  }
+
+  .departments div {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .contact-banner {
+    height: 180px;
+    margin-top: 48px;
+  }
+
+  .contact-banner h2 {
+    font-size: 22px;
+  }
+
+  .contact-banner p {
+    font-size: 14px;
+  }
+
+  .footer-inner {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Keep the SP layout usable on narrow phones while preserving the 750px reference proportions. */
+@media (max-width: 520px) {
+  .page-wrap {
+    width: calc(100% - 32px);
+  }
+
+  .title-line {
+    margin-left: 210px;
+  }
+
+  .section-title,
+  .section-title--compact {
+    width: 210px;
+  }
+
+  .schedule-card th,
+  .schedule-card td,
+  .access-schedule th,
+  .access-schedule td {
+    font-size: 12px;
+  }
+
+  .schedule-card thead th:first-child,
+  .access-schedule thead th:first-child {
+    width: 28%;
+  }
+}
+
+/* Keep the hamburger at the far right of the smartphone header. */
+@media (max-width: 767px) {
+  .header-inner {
+    gap: 0;
+  }
+
+  .menu-toggle {
+    margin-left: auto;
+    margin-right: 0;
+    width: 50px;
+    height: 50px;
+    transform: translateY(8px);
+  }
+
+  .menu-toggle > span:not(.menu-label) {
+    width: 32px;
+    height: 3px;
+  }
+
+  .menu-toggle .menu-label {
+    font-size: 11px;
+  }
+
+  .header-right {
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
 }
