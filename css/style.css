@@ -21,7 +21,7 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   color: var(--text);
   background: #F4F9FA;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85
 }
 
@@ -257,7 +257,7 @@ table {
 }
 
 .schedule-note {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
   margin: 20px 30px 0;
   color: #56615e
@@ -279,7 +279,7 @@ table {
   border-radius: 30px;
   background: #3d715a;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: .03em
 }
 
@@ -308,7 +308,7 @@ table {
   z-index: 2;
   padding: 0 26px;
   color: #111;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: .02em;
   line-height: 1.2;
@@ -322,9 +322,32 @@ table {
   content: none
 }
 
+.section-title--compact {
+  font-size: 27px;
+  white-space: nowrap;
+}
+
+.section-title > span {
+  position: relative;
+  top: -2px;
+}
+
+.section-title--compact > span {
+  left: -6px;
+}
+
+.staff-heading-word {
+  letter-spacing: -.03em;
+}
+
+.about .title-icon,
+.staff .title-icon {
+  transform: translateX(-5px);
+}
+
 .title-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   margin-right: 16px;
   flex: none
@@ -342,7 +365,7 @@ table {
 
 .intro {
   margin: -8px 0 28px;
-  font-size: 13px
+  font-size: 16px
 }
 
 .news-body {
@@ -369,12 +392,12 @@ table {
   gap: 28px;
   padding: 11px 0;
   border-bottom: 1px solid #e0e8e5;
-  font-size: 13px
+  font-size: 16px
 }
 
 .news-list time {
   color: #71827c;
-  font-size: 11px;
+  font-size: 16px;
   min-width: 86px
 }
 
@@ -428,7 +451,7 @@ table {
 }
 
 .medical-card p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.75;
   margin: 0
 }
@@ -466,7 +489,7 @@ table {
 }
 
 .about-panel p {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 2;
   margin: 0 0 20px;
@@ -515,7 +538,7 @@ table {
   grid-template-columns: 65px 1fr;
   gap: 4px 0;
   margin: 14px 0 0;
-  font-size: 11px
+  font-size: 16px
 }
 
 .director-card dt,
@@ -537,7 +560,18 @@ table {
 }
 
 .staff-grid article {
+  position: relative;
   text-align: left
+}
+
+.staff-grid article + article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -17px;
+  width: 1px;
+  background: rgba(37, 57, 51, .16);
 }
 
 .staff-grid img {
@@ -550,12 +584,12 @@ table {
 
 .staff-grid h3 {
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   margin: 0 0 12px
 }
 
 .staff-grid p {
-  font-size: 11px;
+  font-size: 16px;
   margin: 0;
   color: #41524d
 }
@@ -575,7 +609,7 @@ table {
 }
 
 .access-text {
-  font-size: 15px
+  font-size: 16px
 }
 
 .access-text p {
@@ -638,7 +672,7 @@ table {
   padding-left: 0;
   box-sizing: border-box;
   text-align: left;
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1.8;
   color: #56615e
 }
@@ -701,7 +735,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 16px;
   opacity: .96
 }
 
@@ -807,7 +841,7 @@ footer {
 /* v20 staff section: reference screenshot alignment and copy */
 .staff-intro {
   margin: -8px 0 34px;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 2;
   color: #27332f
 }
@@ -849,7 +883,7 @@ footer {
 }
 
 .director-card .green-text {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.75;
   margin: 0 0 14px;
   color: var(--green);
@@ -861,7 +895,7 @@ footer {
   grid-template-columns: 72px 1fr;
   gap: 8px 0;
   margin: 0;
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.7
 }
 
@@ -873,6 +907,16 @@ footer {
   border-radius: 6px;
   padding: 5px 8px;
   color: #34433e
+}
+
+.director-card dt.specialty-label {
+  padding-block: 10px;
+  line-height: 1.4;
+}
+
+.director-card dt.specialty-label + dd {
+  display: flex;
+  align-items: center;
 }
 
 .director-card dd {
@@ -925,7 +969,7 @@ footer {
 .staff-grid p.green-text {
   width: 20em;
   max-width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
   margin: 0 0 12px calc((100% - 20em) / 2);
   color: var(--green);
@@ -939,8 +983,8 @@ footer {
   display: grid;
   grid-template-columns: 66px 22em;
   gap: 8px 0;
-  margin: 0 0 0 calc((100% - 28em) / 2);
-  font-size: 10px;
+  margin: 0 0 0 calc((100% - 20em) / 2);
+  font-size: 16px;
   line-height: 1.65
 }
 
@@ -952,6 +996,21 @@ footer {
   border-radius: 6px;
   padding: 5px 6px;
   color: #34433e
+}
+
+.staff-grid dt.staff-specialty-label {
+  padding-block: 10px;
+  line-height: 1.4;
+}
+
+.staff-grid dt.staff-specialty-label + dd {
+  display: flex;
+  align-items: center;
+  width: calc(15em + 16px);
+}
+
+.staff-grid dd.staff-career {
+  width: calc(15em + 16px);
 }
 
 .staff-grid dd {
