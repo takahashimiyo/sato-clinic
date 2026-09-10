@@ -140,6 +140,7 @@ img {
 
 .hero-overlay {
   position: absolute;
+  z-index: 0;
   inset: 0;
   background: linear-gradient(90deg, rgba(0, 40, 55, .26), rgba(0, 0, 0, 0) 55%)
 }
@@ -149,6 +150,7 @@ img {
   left: calc(50% - 570px);
   top: 50%;
   transform: translateY(-50%);
+  z-index: 2;
   color: #fff;
   font-size: 50px;
   font-weight: 700;
