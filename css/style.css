@@ -888,6 +888,8 @@ footer {
 }
 
 .director-card .green-text {
+  width: 21em;
+  max-width: 100%;
   font-size: 16px;
   line-height: 1.75;
   margin: 0 0 14px;
@@ -1258,6 +1260,14 @@ footer {
     line-height: 1.7;
   }
 
+  .schedule-card .schedule-note {
+    font-size: 14px;
+  }
+
+  .access .schedule-note {
+    font-size: 14px;
+  }
+
   .section {
     margin-top: 48px;
   }
@@ -1370,28 +1380,39 @@ footer {
   }
 
   .about-visual {
-    height: auto;
-    overflow: visible;
+    height: 450px;
+    overflow: hidden;
   }
 
   .about-visual > img {
-    height: 250px;
+    width: 100%;
+    height: 450px;
     object-fit: cover;
+    object-position: center 55%;
   }
 
   .about-panel {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: calc(100% - 24px);
-    margin: -48px auto 0;
-    padding: 22px 16px 20px;
+    margin: 0;
+    padding: 22px 28px 20px;
   }
 
   .about-panel p {
     font-size: 14px;
     line-height: 1.8;
+  }
+
+  .about-panel .pill {
+    display: flex;
+    width: max-content;
+    margin: 16px 0 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .director-card {
@@ -1412,14 +1433,29 @@ footer {
   }
 
   .director-card .green-text {
+    width: 22em;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(2px);
     font-size: 14px;
     text-align: left;
   }
 
   .director-card dl {
+    width: 22em;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(2px);
     text-align: left;
     grid-template-columns: 66px 1fr;
     font-size: 14px;
+  }
+
+  .director-card dl dd:first-of-type {
+    width: 17em;
+    max-width: 100%;
   }
 
   .staff-grid {
@@ -1479,6 +1515,7 @@ footer {
 
   .access-text {
     font-size: 14px;
+    text-align: center;
   }
 
   .departments {
@@ -1496,8 +1533,12 @@ footer {
   }
 
   .departments div {
-    text-align: left;
+    text-align: center;
     font-size: 14px;
+  }
+
+  .departments-note {
+    margin-top: 28px;
   }
 
   .contact-banner {
@@ -1511,6 +1552,7 @@ footer {
 
   .contact-banner p {
     font-size: 14px;
+    text-align: center;
   }
 
   .footer-inner {
@@ -1568,6 +1610,10 @@ footer {
 
   .menu-toggle .menu-label {
     font-size: 11px;
+  }
+
+  .section-action {
+    text-align: center;
   }
 
   .header-right {
