@@ -146,13 +146,14 @@ img {
 
 .hero-copy {
   position: absolute;
-  left: calc(50% - 590px);
-  top: 98px;
+  left: calc(50% - 570px);
+  top: 50%;
+  transform: translateY(-50%);
   color: #fff;
-  font-size: 48px;
+  font-size: 50px;
   font-weight: 700;
   letter-spacing: .08em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, .23)
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .4)
 }
 
 .page-wrap {
